@@ -12,7 +12,7 @@ import (
 func main() {
 	var name, num string
 	if len(os.Args) < 2 || len(os.Args[1]) == 0 {
-		fmt.Println("Usage: docker-search-tag name")
+		fmt.Println("Usage: docker-search-tag NAME [NUM]")
 		return
 	}
 

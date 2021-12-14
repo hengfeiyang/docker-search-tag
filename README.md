@@ -10,6 +10,12 @@ usage:
 docker-search-tag mysql
 ```
 
+or list 10 tags(default is 100):
+
+```
+docker-search-tag mysql 10
+```
+
 results:
 
 ```
