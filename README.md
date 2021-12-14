@@ -1,6 +1,8 @@
 # docker-search-tag
 
-list tags for docker search repository results
+list tags for docker search repository results.
+
+## Usage
 
 usage:
 
@@ -22,97 +24,41 @@ latest               144
 8.0.27               144
 8.0.26               143
 8.0.25               154
-8.0.24               154
-8.0.23               151
-8.0.22               151
-8.0.21               151
-8.0.20               0
-8.0.2                87
-8.0.19               151
-8.0.18               127
-8.0.17               123
-8.0.16               123
-8.0.15               129
-8.0.14               129
-8.0.13               131
-8.0.12               131
-8.0.11               121
-8.0.1                86
-8.0.0                126
-8.0                  144
-8                    144
-5.7.9                117
-5.7.36               147
-5.7.35               147
-5.7.34               147
-5.7.33               147
-5.7.32               147
-5.7.31               147
-5.7.30               0
-5.7.29               151
-5.7.28               143
-5.7.27               118
-5.7.26               118
-5.7.25               118
-5.7.24               118
-5.7.23               118
-5.7.22               118
-5.7.21               117
-5.7.20               137
-5.7.19               137
-5.7.18               136
-5.7.17               133
-5.7.16               125
-5.7.15               125
-5.7.14               125
-5.7.13               123
-5.7.12               123
-5.7.11               117
-5.7.10               117
-5.7                  147
-5.6.51               98
-5.6.50               98
-5.6.49               98
-5.6.48               0
-5.6.47               98
-5.6.46               97
-5.6.45               79
-5.6.44               78
-5.6.43               78
-5.6.42               78
-5.6.41               78
-5.6.40               78
-5.6.39               78
-5.6.38               100
-5.6.37               100
-5.6.36               99
-5.6.35               107
-5.6.34               107
-5.6.33               107
-5.6.32               107
-5.6.31               107
-5.6.30               107
-5.6.29               105
-5.6.28               106
-5.6.27               106
-5.6                  98
-5.5.62               63
-5.5.61               62
-5.5.60               62
-5.5.59               63
-5.5.58               86
-5.5.57               85
-5.5.56               85
-5.5.55               85
-5.5.54               83
-5.5.53               83
+...
 5.5.52               83
 5.5.51               83
 5.5.50               83
 5.5.49               83
-5.5.48               83
-5.5.47               83
 5.5.46               83
 5.5                  63
 5                    147
 ```
+
+## why
+
+when i use `docker search name` find some images, it only tell me there ere some images like this:
+
+``
+NAME                              DESCRIPTION                                     STARS     OFFICIAL   AUTOMATED
+mysql                             MySQL is a widely used, open-source relation…   11803     [OK]
+mariadb                           MariaDB Server is a high performing open sou…   4492      [OK]
+mysql/mysql-server                Optimized MySQL Server Docker images. Create…   885                  [OK]
+percona                           Percona Server is a fork of the MySQL relati…   565       [OK]
+phpmyadmin                        phpMyAdmin - A web interface for MySQL and M…   391       [OK]
+centos/mysql-57-centos7           MySQL 5.7 SQL database server                   92
+mysql/mysql-cluster               Experimental MySQL Cluster Docker images. Cr…   89
+centurylink/mysql                 Image containing mysql. Optimized to be link…   59                   [OK]
+databack/mysql-backup             Back up mysql databases to... anywhere!         54
+prom/mysqld-exporter                                                              44                   [OK]
+deitch/mysql-backup               REPLACED! Please use http://hub.docker.com/r…   41                   [OK]
+tutum/mysql                       Base docker image to run a MySQL database se…   35
+widdpim/mysql-client              Dockerized MySQL Client (5.7) including Curl…   1                    [OK]
+```
+
+then, i want to pull a image like this: `docker pull mysql:TAG`, but i don't know about tags, i must open browser visit `https://hub.docker.com/_/mysql?tab=tags` to find tags information, after then i can do pull with tag.
+
+it is terible!!! 
+
+i want to know the tag in terminal, like docker search tag xxx!
+
+so here is it.
