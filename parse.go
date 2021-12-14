@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"sort"
 	"strings"
+	"time"
 )
 
 func parse(name string, respBody []byte) {
@@ -30,9 +31,13 @@ func parse(name string, respBody []byte) {
 	}
 
 	fmt.Printf("Tags for %s:\n\n", name)
-	fmt.Printf("%s%s%s\n", "TAG", strings.Repeat(" ", maxLengthForName), "SIZE(MB)")
+	fmt.Printf("%s%s%10s   %s\n", "TAG", strings.Repeat(" ", maxLengthForName), "SIZE(MB)", "LASTPUSH")
 	for _, v := range respData.Results {
-		fmt.Printf("%s%s   %d\n", v.Name, strings.Repeat(" ", max(0, maxLengthForName-len(v.Name))), v.FullSize/1024/1024)
+		fmt.Printf("%s%s   %10d   %s\n",
+			v.Name, strings.Repeat(" ", max(0, maxLengthForName-len(v.Name))),
+			v.FullSize/1024/1024,
+			v.TagLastPushed.Format(time.RFC3339),
+		)
 	}
 }
 
