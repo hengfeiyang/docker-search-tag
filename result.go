@@ -9,7 +9,7 @@ type response struct {
 }
 
 type responseResult struct {
-	Name          string    `json;"name"`
+	Name          string    `json:"name"`
 	FullSize      int       `json:"full_size"`
 	V2            bool      `json:"v2"`
 	TagStatus     string    `json:"tag_status"`

@@ -22,6 +22,10 @@ func main() {
 		num = os.Args[2]
 	}
 
+	request(name, num)
+}
+
+func request(name, num string) {
 	url := fmt.Sprintf("https://registry.hub.docker.com/v2/repositories/library/%s/tags/?page_size=%s", name, num)
 	resp, err := http.Get(url)
 	if err != nil {

@@ -23,7 +23,8 @@ func parse(name string, respBody []byte) {
 	// resort results
 	sort.Sort(respData.Results)
 
-	maxLengthForName := 10
+	// beauty format
+	var maxLengthForName int
 	for _, v := range respData.Results {
 		if len(v.Name) > maxLengthForName {
 			maxLengthForName = len(v.Name)
@@ -34,16 +35,9 @@ func parse(name string, respBody []byte) {
 	fmt.Printf("%s%s%10s   %s\n", "TAG", strings.Repeat(" ", maxLengthForName), "SIZE(MB)", "LASTPUSH")
 	for _, v := range respData.Results {
 		fmt.Printf("%s%s   %10d   %s\n",
-			v.Name, strings.Repeat(" ", max(0, maxLengthForName-len(v.Name))),
+			v.Name, strings.Repeat(" ", maxLengthForName-len(v.Name)),
 			v.FullSize/1024/1024,
 			v.TagLastPushed.Format(time.RFC3339),
 		)
 	}
-}
-
-func max(i, j int) int {
-	if i > j {
-		return i
-	}
-	return j
 }
