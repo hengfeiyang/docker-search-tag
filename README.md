@@ -6,15 +6,32 @@ list tags for docker search repository results.
 
 usage:
 
+
+```
+docker-search-tag NAME [TAG] [NUM]
+```
+
+list mysql tags:
+
 ```
 docker-search-tag mysql
+```
+
+list mysql tags by filter 8. (search version 8.x)
+
+```
+docker-search-tag mysql 8.
 ```
 
 or list 10 tags(default is 100):
 
 ```
-docker-search-tag mysql 10
+docker-search-tag mysql 8. 10
+docker-search-tag mysql _  10
 ```
+
+> here, can use `_` igor second flag.
+
 
 results:
 
