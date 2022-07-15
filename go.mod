@@ -1,3 +1,3 @@
-module github.com/safeie/docker-search-tag
+module github.com/hengfeiyang/docker-search-tag
 
 go 1.17
