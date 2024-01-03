@@ -11,13 +11,14 @@ usage:
 docker-search-tag NAME [TAG] [NUM]
 ```
 
-list mysql tags:
+list the tags of a repo:
 
 ```
 docker-search-tag mysql
+docker-search-tag openobserve/openobserve
 ```
 
-list mysql tags by filter 8. (search version 8.x)
+list tags by filter 8. (search version 8.x)
 
 ```
 docker-search-tag mysql 8.
