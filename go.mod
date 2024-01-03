@@ -1,3 +1,3 @@
 module github.com/hengfeiyang/docker-search-tag
 
-go 1.17
+go 1.21
